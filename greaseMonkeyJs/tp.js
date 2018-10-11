@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         TP Seeders 100+
+// @name         TP Seeders 120+
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -10,7 +10,7 @@
 
 (function() {
     'use strict';
-    var threshold = 100;
+    var threshold = 120;
     var table = document.getElementById("form_torrent").getElementsByClassName("torrents")[0];
     for (var i = 1, row; row = table.rows[i]; i++) {
         var sd = row.cells[5].getElementsByTagName("a")[0];
