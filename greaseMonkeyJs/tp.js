@@ -10,7 +10,6 @@
 
 (function() {
     'use strict';
-
     var threshold = 100;
     var table = document.getElementById("form_torrent").getElementsByClassName("torrents")[0];
     for (var i = 1, row; row = table.rows[i]; i++) {
