@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     var maxInputHeight = "200px";
-    var maxPanelHeight = "600px";
+    var maxPanelHeight = "450px";
 
     setTimeout(function(){
         var consolePanel = document.getElementsByClassName("custom-testcase__2ah7");
