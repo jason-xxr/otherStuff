@@ -10,8 +10,9 @@
 
 (function() {
     'use strict';
-    var maxHeight = "200px";
-    var target = "css-srz1f8-Value e5i1odf2";
+    var maxInputHeight = "200px";
+    var maxPanelHeight = "600px";
+
     setTimeout(function(){
         var consolePanel = document.getElementsByClassName("custom-testcase__2ah7");
         console.log("consolePanel.length", consolePanel.length);
@@ -22,11 +23,17 @@
                     console.log("resultTab.length", resultTab.length);
                     if (resultTab.length>0) {
                         resultTab[0].addEventListener("click", function(){
-                            var targets = document.getElementsByClassName(target);
+                            var resultPanel = document.getElementsByClassName("css-187w515-TabContent e5i1odf5");
+                            console.log("resultPanel.length", resultPanel.length);
+                            if (resultPanel.length>0) {
+                                console.log("old box maxHeight", i, resultPanel[0].style.maxHeight);
+                                resultPanel[0].style.maxHeight=maxPanelHeight;
+                            }
+                            var targets = document.getElementsByClassName("css-srz1f8-Value e5i1odf2");
                             console.log("targets.length", targets.length);
                             for (var i = 0; i<targets.length; i++) {
-                                console.log("old H", i, targets[i].style.maxHeight);
-                                targets[i].style.maxHeight=maxHeight;
+                                console.log("old input maxHeight", i, targets[i].style.maxHeight);
+                                targets[i].style.maxHeight=maxInputHeight;
                             }
                             console.log("resized");
                         });
