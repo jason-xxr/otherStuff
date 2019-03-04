@@ -13,24 +13,26 @@
     'use strict';
     var maxInputHeight = "200px";
     var maxPanelHeight = "450px";
-    var toast = new iqwerty.toast.Toast();
+    var duration = function(t){
+        return {
+            settings: {
+                duration: t
+            }
+        };
+    };
 
     setTimeout(function(){
         var consolePanel = document.getElementsByClassName("custom-testcase__2ah7");
         console.log("consolePanel.length", consolePanel.length);
         
         if (consolePanel.length>0) {
-            toast.setText('Console panel captured.')
-                .setDuration(1000)
-                .show();
+            iqwerty.toast.Toast("Console panel captured.", duration(1000));
             consolePanel[0].addEventListener("click", function(){
                 setTimeout(function(){
                     var resultTab = document.getElementsByClassName("css-106l9hg-TabHeader e5i1odf4");
                     console.log("resultTab.length", resultTab.length);
                     if (resultTab.length>0) {
-                        toast.setText('Activated.')
-                            .setDuration(500)
-                            .show();
+                        iqwerty.toast.Toast("Activated.", duration(500));
                         resultTab[0].addEventListener("click", function(){
                             var resultPanel = document.getElementsByClassName("css-187w515-TabContent e5i1odf5");
                             console.log("resultPanel.length", resultPanel.length);
@@ -47,16 +49,12 @@
                             console.log("resized");
                         });
                     } else {
-                        toast.setText('Result tab not found, please reload.')
-                            .setDuration(1000)
-                            .show();
+                        iqwerty.toast.Toast("Result tab not found, please reload.", duration(5000));
                     }
                 }, 1000);
             })
         } else {
-            toast.setText('Console panel not found, please reload')
-                .setDuration(3000)
-                .show();
+            iqwerty.toast.Toast("Console panel not found, please reload.", duration(5000));
         }
     }, 5000);
 })();
